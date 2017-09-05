@@ -1,0 +1,43 @@
+﻿@model Convert_Playlist.ViewModel.UsuarioSpotify
+@{
+    ViewBag.Title = "Conveter Playlists";
+    ViewBag.Description = "Exportar Playlists";
+}
+
+<div class="box box-info">
+    <div class="box-header with-border">
+        <h3 class="box-title">
+
+            Playlis <strong id="nome-playlist"></strong>
+            <button type="button" class="btn btn-danger" title="Exportar playlist para youtube" data-toggle="tooltip"><span> </span><i class="fa fa-youtube-play" aria-hidden="true"></i></button> 
+        </h3>
+
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                <i class="fa fa-minus"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <div id="playlist">
+
+        </div>
+        <!-- /.table-responsive -->
+    </div>
+</div>
+@section Script{
+<script>    
+
+    $(document).ready(function () {
+        var parametros = {
+            viewModel: @Html.Raw(Json.Encode(Model)),
+            urls: {
+                apiPlaylistTrack:"@Url.HttpRouteUrl("ActionApi", new { controller= "Spotify", action = "PlaylistTrack" })"
+            }
+        };
+        var app = new App(parametros);
+    });
+
+</script>
+}
