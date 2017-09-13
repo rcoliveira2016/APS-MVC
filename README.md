@@ -3,7 +3,9 @@
 <br />
 
 ## Descrição
-    O projeto tem o intuito de 
+
+O projeto tem o intuito de integrar apis de diferentes empresas, a apis escolhidas foram Spotify Web API e Youtube DATA API(v3).
+
 
 ## Prints
 
