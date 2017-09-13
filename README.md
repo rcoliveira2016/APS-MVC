@@ -2,7 +2,8 @@
 
 <br />
 
-<br />
+## Descrição
+  O projeto tem o intuito de 
 
 ## Prints
 
@@ -16,7 +17,7 @@
 
 * ###  Playlist
 
-  ![alt text](https://raw.githubusercontent.com/rcoliveira2016/APS-MVC/master/docs/printss/home_playlis.png)
+  ![alt text](https://raw.githubusercontent.com/rcoliveira2016/APS-MVC/master/docs/prints/home_playlis.png)
 
 * ###  Playlist sendo exportada 
 
