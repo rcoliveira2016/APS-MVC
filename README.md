@@ -3,8 +3,8 @@
 
 ## Descrição
 
-  O projeto tem o intuito de integrar apis de diferentes empresas, as apis escolhidas para o projetoforam Spotify Web API e Youtube DATA API(v3). A principal funcionalide da aplicação é exportar uma playlist do spotify, para uma playlist de vídeos do youtube.
-O back-end foi desenvolvido na técnoligia .NET framework 4.6.1 asp mvc 5, e o front-end foi construido com HTML, CSS e Javascript(nativo com Jquery)
+  O projeto tem o intuito de integrar apis de diferentes empresas. Foram escolhidas para desenvolver o projeto as seguintes apis:Spotify Web API e Youtube DATA API(v3). A principal funcionalidade da aplicação é exportar uma playlist do spotify, para uma playlist de vídeos do youtube.
+O back-end foi desenvolvido na tecnologia .NET framework 4.6.1 asp mvc 5, e o front-end foi construido com HTML, CSS e Javascript(nativo com Jquery)
 
 
 ## Prints
