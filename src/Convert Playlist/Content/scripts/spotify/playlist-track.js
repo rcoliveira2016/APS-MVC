@@ -2,6 +2,44 @@
 
     var idElement;
 
+    var _setarStatusTd = function (index, exportado) {
+        var table = $("#" + idElement);
+        var tr = table.find("tbody tr")[index];
+        $(tr).find("td").first().text(exportado ? "Sim":"Não");
+    }
+
+    var _removeStatusTd = function () {
+        var table = $("#" + idElement);
+        var tbody = table.find("tbody");
+        var thead = table.find("thead");
+        thead.find("tr").find("th").first().remove();
+        tbody.find("tr").each(function (index) {
+            $(this).find("td").first().remove();
+        });
+    }
+
+    var _adicionarColunaExportado = function () {
+        var table = $("#" + idElement);
+        var tbody = table.find("tbody");
+        var thead = table.find("thead");
+
+        if (thead.find("tr").length > 3)
+            return;
+
+        var th = document.createElement("th");
+        th.innerText = "Exportado";
+
+        thead.find("tr").prepend(th);
+
+        tbody.find("tr").each(function (index) {
+            var td = document.createElement("td");
+
+            $(this).prepend(td);
+        });
+
+
+    }
+
     var _povoarTabela = function (playlistTrack) {
         var tbody = $("#" + idElement).find("tbody");
 
@@ -75,7 +113,12 @@
         },
         povoarTabela: function (data) {
             _povoarTabela(data);
-        }
+        },
+        adicionarColunaExportado: _adicionarColunaExportado,
+        setarStatusTd: function (index, exportado) {
+            _setarStatusTd(index, exportado)
+        },
+        removeStatusTd: _removeStatusTd
     };
 
 })()

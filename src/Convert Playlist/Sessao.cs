@@ -10,5 +10,6 @@ namespace Convert_Playlist
     public static class Sessao
     {
         public static SpotifyHelper spotify { get; set; }
+        public static YoutubeHelper youtube { get; set; }
     }
 }

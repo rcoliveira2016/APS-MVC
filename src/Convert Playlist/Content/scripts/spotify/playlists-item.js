@@ -6,7 +6,7 @@
     var li = document.createElement("li");
 
     var span = document.createElement("span");
-    span.innerHTML = playlist.Nome;
+    span.innerText = playlist.Nome;
 
 
     var a = document.createElement("a");

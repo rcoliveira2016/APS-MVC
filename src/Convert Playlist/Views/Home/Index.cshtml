@@ -9,8 +9,9 @@
         <h3 class="box-title">
 
             Playlis <strong id="nome-playlist"></strong>
-            <button type="button" class="btn btn-danger" title="Exportar playlist para youtube" data-toggle="tooltip"><span> </span><i class="fa fa-youtube-play" aria-hidden="true"></i></button> 
+            <button type="button" class="btn btn-danger" title="Exportar playlist para youtube" id="btn-exportar" data-toggle="tooltip"><span> </span><i class="fa fa-youtube-play" aria-hidden="true"></i></button>
         </h3>
+        <div id="status">Total:<strong id="total"></strong>  Atual:<strong id="atual"></strong></div>
 
         <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -27,13 +28,15 @@
     </div>
 </div>
 @section Script{
-<script>    
+<script>
 
     $(document).ready(function () {
         var parametros = {
             viewModel: @Html.Raw(Json.Encode(Model)),
             urls: {
-                apiPlaylistTrack:"@Url.HttpRouteUrl("ActionApi", new { controller= "Spotify", action = "PlaylistTrack" })"
+                apiPlaylistTrack:"@Url.HttpRouteUrl("ActionApi", new { controller= "Spotify", action = "PlaylistTrack" })",
+                apiCriarPlaylist: "@Url.HttpRouteUrl("ActionApi", new { controller= "Youtube", action = "CriarPlaylist" })",
+                apiCriarPlaylistItem: "@Url.HttpRouteUrl("ActionApi", new { controller= "Youtube", action = "CriarPlaylistItem" })",
             }
         };
         var app = new App(parametros);

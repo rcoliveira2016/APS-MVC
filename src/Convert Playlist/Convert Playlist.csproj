@@ -158,9 +158,14 @@
     <Content Include="Content\scripts\home\app.js" />
     <Content Include="Content\scripts\spotify\playlist-track.js" />
     <Content Include="Content\scripts\spotify\playlists-item.js" />
+    <Content Include="Content\style\home\home.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Views\Home\Acesso\Longin.cshtml" />
+    <Content Include="client_secret.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\scripts\extension\ajax-queue.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -171,13 +176,18 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\SpotifyController.cs" />
+    <Compile Include="Controllers\YoutubeController.cs" />
     <Compile Include="Helper\SpotifyHelper.cs" />
+    <Compile Include="Helper\YoutubeHelper.cs" />
     <Compile Include="Negocio\SpotifyNegocio.cs" />
+    <Compile Include="Negocio\YoutubeNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Sessao.cs" />
+    <Compile Include="ViewModel\Parametros\CriarPlaylistItemParametro.cs" />
+    <Compile Include="ViewModel\Parametros\CriarPlaylistParametro.cs" />
     <Compile Include="ViewModel\Parametros\PlaylistTrackParametro.cs" />
     <Compile Include="ViewModel\PlaylistTrackItem.cs" />
     <Compile Include="ViewModel\PlaylistItem.cs" />

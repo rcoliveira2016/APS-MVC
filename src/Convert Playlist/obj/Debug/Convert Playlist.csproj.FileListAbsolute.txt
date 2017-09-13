@@ -208,3 +208,4 @@ C:\Users\roram\Documents\Visual Studio 2017\Projects\Convert Playlist\src\Conver
 C:\Users\roram\Documents\Visual Studio 2017\Projects\Convert Playlist\src\Convert Playlist\obj\Debug\Convert Playlist.csproj.CoreCompileInputs.cache
 C:\Users\roram\Documents\Visual Studio 2017\Projects\Convert Playlist\src\Convert Playlist\obj\Debug\Convert Playlist.dll
 C:\Users\roram\Documents\Visual Studio 2017\Projects\Convert Playlist\src\Convert Playlist\obj\Debug\Convert Playlist.pdb
+C:\Users\roram\Documents\Visual Studio 2017\Projects\Convert Playlist\src\Convert Playlist\bin\client_secret.json

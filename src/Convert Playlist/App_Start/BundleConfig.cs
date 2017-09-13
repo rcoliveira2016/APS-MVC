@@ -21,11 +21,12 @@ namespace Convert_Playlist.App_Start
             bundles.Add(new StyleBundle("~/Bundles/css")
                 .Include("~/Content/css/bootstrap.min.css", new CssRewriteUrlTransformAbsolute())
                 .Include("~/Content/css/select2.min.css")
-                .Include("~/Content/css/bootstrap-datepicker3.min.css")
+                .Include("~/Content/css/bootstrap-datepicker3.min.css")                
                 .Include("~/Content/css/font-awesome.min.css", new CssRewriteUrlTransformAbsolute())
                 .Include("~/Content/css/icheck/blue.min.css", new CssRewriteUrlTransformAbsolute())
                 .Include("~/Content/css/AdminLTE.css", new CssRewriteUrlTransformAbsolute())
-                .Include("~/Content/css/skins/skin-blue.css"));
+                .Include("~/Content/css/skins/skin-blue.css")
+                .Include("~/Content/style/home/home.css"));
 
             bundles.Add(new ScriptBundle("~/Bundles/js")
                 .Include("~/Content/js/plugins/jquery/jquery-2.2.4.js")
@@ -40,6 +41,7 @@ namespace Convert_Playlist.App_Start
                 .Include("~/Content/js/plugins/inputmask/jquery.inputmask.bundle.js")
                 .Include("~/Content/js/plugins/block-ui/block-ui.js")
                 .Include("~/Content/scripts/home/app.js")
+                .Include("~/Content/scripts/extension/ajax-queue.js")
                 .Include("~/Content/scripts/spotify/playlists-item.js")
                 .Include("~/Content/scripts/spotify/playlist-track.js")
                 .Include("~/Content/js/app.js")
