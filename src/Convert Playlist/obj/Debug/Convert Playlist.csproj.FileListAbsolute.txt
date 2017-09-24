@@ -209,3 +209,114 @@ C:\Users\roram\Documents\Visual Studio 2017\Projects\Convert Playlist\src\Conver
 C:\Users\roram\Documents\Visual Studio 2017\Projects\Convert Playlist\src\Convert Playlist\obj\Debug\Convert Playlist.dll
 C:\Users\roram\Documents\Visual Studio 2017\Projects\Convert Playlist\src\Convert Playlist\obj\Debug\Convert Playlist.pdb
 C:\Users\roram\Documents\Visual Studio 2017\Projects\Convert Playlist\src\Convert Playlist\bin\client_secret.json
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\client_secret.json
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\csc.exe
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\csc.exe.config
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\csc.rsp
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\csi.exe
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\csi.exe.config
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\csi.rsp
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.AppContext.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Console.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.IO.Compression.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.IO.Pipes.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Security.Claims.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Threading.Thread.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.ValueTuple.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Xml.XPath.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\vbc.exe
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\vbc.exe.config
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\vbc.rsp
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\VBCSCompiler.exe
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Convert Playlist.dll.config
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Convert Playlist.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Convert Playlist.pdb
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Antlr3.Runtime.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Google.Apis.Auth.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Google.Apis.Auth.PlatformServices.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Google.Apis.Core.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Google.Apis.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Google.Apis.PlatformServices.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Google.Apis.YouTube.v3.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Newtonsoft.Json.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\RouteJs.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\RouteJs.Mvc5.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\SpotifyAPI.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Net.Http.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Net.Http.Formatting.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Security.Cryptography.X509Certificates.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Helpers.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Http.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Http.WebHost.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Mvc.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Optimization.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Razor.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Webpages.Deployment.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Webpages.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Webpages.Razor.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\WebActivatorEx.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\WebGrease.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\WebHelpers.Mvc5.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Google.Apis.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Google.Apis.Auth.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Google.Apis.Core.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Google.Apis.YouTube.v3.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\SpotifyAPI.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Net.Http.Formatting.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Http.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Http.WebHost.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Antlr3.Runtime.pdb
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\Newtonsoft.Json.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Helpers.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Razor.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Webpages.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Webpages.Deployment.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Webpages.Razor.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Mvc.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\System.Web.Optimization.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\WebHelpers.Mvc5.xml
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\obj\Debug\Convert Playlist.csprojResolveAssemblyReference.cache
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\obj\Debug\Convert Playlist.csproj.CoreCompileInputs.cache
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\obj\Debug\Convert Playlist.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\obj\Debug\Convert Playlist.pdb
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\pt-br\System.Web.Helpers.resources.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\pt-br\System.Web.Razor.resources.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\pt-br\System.Web.Webpages.resources.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\pt-br\System.Web.Webpages.Deployment.resources.dll
+C:\Users\roram\Documents\desenvolvimento\C#\APS\APS-MVC\src\Convert Playlist\bin\pt-br\System.Web.Webpages.Razor.resources.dll

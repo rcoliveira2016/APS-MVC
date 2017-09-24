@@ -1,6 +1,8 @@
 ﻿var PlaylistTrack = (function () {
 
-    var idElement;
+    var idElement,
+        _tamanhoColunasInicial,
+        _exportando;
 
     var _setarStatusTd = function (index, exportado) {
         var table = $("#" + idElement);
@@ -9,30 +11,37 @@
     }
 
     var _removeStatusTd = function () {
+        
         var table = $("#" + idElement);
         var tbody = table.find("tbody");
         var thead = table.find("thead");
-        thead.find("tr").find("th").first().remove();
+
+        if (!thead.find(".exportado").length)
+            return;
+
+        thead.find("tr").find("th.exportado").first().remove();
         tbody.find("tr").each(function (index) {
             $(this).find("td").first().remove();
         });
     }
 
     var _adicionarColunaExportado = function () {
+
+        _removeStatusTd();
+
         var table = $("#" + idElement);
         var tbody = table.find("tbody");
-        var thead = table.find("thead");
-
-        if (thead.find("tr").length > 3)
-            return;
+        var thead = table.find("thead");        
 
         var th = document.createElement("th");
         th.innerText = "Exportado";
+        th.className = "exportado"
 
         thead.find("tr").prepend(th);
 
         tbody.find("tr").each(function (index) {
             var td = document.createElement("td");
+            td.className = "td-exportado";
 
             $(this).prepend(td);
         });
@@ -40,7 +49,10 @@
 
     }
 
-    var _povoarTabela = function (playlistTrack) {
+    var _povoarTabela = function (playlistTrack) {        
+
+        _removeStatusTd();
+
         var tbody = $("#" + idElement).find("tbody");
 
         tbody.empty();
@@ -94,9 +106,7 @@
 
         $(thead).append(trThead);
 
-        $(table).append(thead);
-
-        
+        $(table).append(thead);        
 
         table.append(tbody);
 
@@ -118,7 +128,8 @@
         setarStatusTd: function (index, exportado) {
             _setarStatusTd(index, exportado)
         },
-        removeStatusTd: _removeStatusTd
+        removeStatusTd: _removeStatusTd,
+        exportando: _exportando
     };
 
 })()

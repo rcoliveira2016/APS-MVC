@@ -1,31 +1,52 @@
 "use strict";
 
 var AjaxQueueExtension = (function() {
-    var ajaxQueue = $({});
-    var currentRequest = null;
+    var ajaxQueue = $({}),
+        currentRequest = null,
+        tamanhoFila = 0,
+        iniciado = false;
 
     $.ajaxQueue = function(ajaxOpts) {
-        // Hold the original complete function.
+
+        if (!iniciado) {
+            console.log("O AjaxQueueExtension não foi iniciado");
+            return;
+        }
+
         var oldComplete = ajaxOpts.complete;
-        // Queue our ajax request.
+        
         ajaxQueue.queue(function(next) {
-            // Create a complete callback to fire the next event in the queue.
+            
             ajaxOpts.complete = function() {
-                // Fire the original complete if it was there.
+                
                 if (oldComplete) {
                     oldComplete.apply(this, arguments);
                 }
-                // Run the next query in the queue.
+                tamanhoFila--;
                 next();
             };
-            // Run the query.
+            
             currentRequest = $.ajax(ajaxOpts);
         });
 
+        tamanhoFila++;
 
     };
 
-    var _clearQueue = function() {
+    var _status = function () {
+        return {
+            tamanhoAtual: function () {
+                return tamanhoFila;
+            },
+            filaExecutada: function () {
+                return (tamanhoFila>0);
+            }
+        };
+    }
+
+    var _clearQueue = function () {
+        tamanhoFila = 0;
+        iniciado = false;
         ajaxQueue.clearQueue();
         if (currentRequest) {
             currentRequest.abort();
@@ -36,6 +57,14 @@ var AjaxQueueExtension = (function() {
         limparQueue: function() {
             _clearQueue();
         },
+        iniciarFila: function () {
+            tamanhoFila = 0;
+            iniciado = true
+        },
+        finalizarFila: function () {
+            iniciado = false
+        },
+        status: _status(),
         post: function(url, data, sucesso, erro, manobra) {
             $.ajaxQueue({
                 type: "POST",

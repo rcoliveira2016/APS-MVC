@@ -42,32 +42,30 @@
     var _eventoClickPlaylist = function () {
         $("a.playlist-click").click(function (e) {
             e.preventDefault();
-
-            var idUsuario = $(this).attr("data-usuario");
-            var idPlaylist = $(this).attr("data-playlist");
-
-            $('#btn-exportar').show();
-
-            var playlist = _procurarPlaylist(idUsuario, idPlaylist);
-
-            var nomePlaylist = ('- ' + playlist.Nome);
-
-            parametros.playlistSelecionada = playlist;
-
-            $('#status').hide();
-
-            $("#nome-playlist").text(nomePlaylist);
-
-            $.ajax({
-                async: true,
-                url: parametros.urls.apiPlaylistTrack,
-                type: "post",
-                data: { Id: idPlaylist, IdUsuario: idUsuario },
-                success: function (data) {
-                    playlist.Musicas = data;
-                    PlaylistTrack.povoarTabela(data);
-                }
-            });
+            var element = this;
+            if (AjaxQueueExtension.status.filaExecutada()) {
+                BootstrapDialog.show({
+                    title: 'Alerta',
+                    message: 'Você deseja cancelar a exportação da playlist',
+                    buttons: [{
+                        label: 'Sim',
+                        action: function (dialog) {
+                            iniciarBlockUI = true;
+                            AjaxQueueExtension.limparQueue();
+                            _criarPlaylistTrack(element);
+                            dialog.close();
+                        }
+                    }, {
+                        label: 'Não',
+                        action: function (dialog) {
+                            dialog.close();
+                        }
+                    }]
+                });
+            } else {
+                _criarPlaylistTrack(element);
+            }
+                      
 
         });
     }
@@ -98,6 +96,9 @@
     
     var _exportarPlaylist = function (idPlaylist) {
 
+        if (AjaxQueueExtension.status.filaExecutada())
+            return;
+
         var playlist = parametros.playlistSelecionada;
 
         $('#status').show();
@@ -105,6 +106,8 @@
         $('#status #total').text(playlist.Musicas.length);
 
         $('#status #atual').text(0);
+
+        AjaxQueueExtension.iniciarFila();
 
         for (var i = 0; i < playlist.Musicas.length; i++) {
 
@@ -125,7 +128,8 @@
             );
 
         }
-        
+
+        AjaxQueueExtension.finalizarFila();
 
         iniciarBlockUI = true;
     }
@@ -141,6 +145,33 @@
         return null;
     }
 
+    var _criarPlaylistTrack = function (elemento) {
+        var idUsuario = $(elemento).attr("data-usuario");
+        var idPlaylist = $(elemento).attr("data-playlist");
+
+        $('#btn-exportar').show();
+
+        var playlist = _procurarPlaylist(idUsuario, idPlaylist);
+
+        var nomePlaylist = ('- ' + playlist.Nome);
+
+        parametros.playlistSelecionada = playlist;
+
+        $('#status').hide();
+
+        $("#nome-playlist").text(nomePlaylist);
+
+        $.ajax({
+            async: true,
+            url: parametros.urls.apiPlaylistTrack,
+            type: "post",
+            data: { Id: idPlaylist, IdUsuario: idUsuario },
+            success: function (data) {
+                playlist.Musicas = data;
+                PlaylistTrack.povoarTabela(data);
+            }
+        });
+    }
 
     _carregar();
     _eventoClickPlaylist();
