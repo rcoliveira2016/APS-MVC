@@ -23,7 +23,7 @@ namespace Convert_Playlist.Controllers
             }
             var view = await spotifyNegocio.pegarUsuario();
             return View(view);
-        }      
+        }
 
         [MVCException]
         [HttpPost]
@@ -35,6 +35,7 @@ namespace Convert_Playlist.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
+            ViewBag.Erros = new string[] { "Erros no login"};
             return RedirectToAction(nameof(Login));
         }
 
