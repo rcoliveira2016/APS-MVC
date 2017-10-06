@@ -155,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\bootstrap-dialog.min.css" />
+    <Content Include="Content\img\user.png" />
     <Content Include="Content\js\plugins\block-ui\block-ui.js" />
     <Content Include="Content\js\plugins\bootstrap\bootstrap-dialog.min.js" />
     <Content Include="Content\scripts\home\app.js" />
@@ -162,6 +163,7 @@
     <Content Include="Content\scripts\spotify\playlists-item.js" />
     <Content Include="Content\style\home\home.css" />
     <Content Include="Global.asax" />
+    <None Include="Views\Error\Erro500.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Views\Home\Acesso\Longin.cshtml" />
     <Content Include="client_secret.json">
@@ -178,8 +180,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\SpotifyController.cs" />
     <Compile Include="Controllers\YoutubeController.cs" />
+    <Compile Include="Helper\Attribute\MVCExceptionAttribute.cs" />
     <Compile Include="Helper\Attribute\HttpExceptionAttribute.cs" />
     <Compile Include="Helper\SpotifyHelper.cs" />
     <Compile Include="Helper\YoutubeHelper.cs" />
@@ -262,7 +266,6 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Content\img\user.jpg" />
     <Content Include="Content\img\icheck\aero.png" />
     <Content Include="Content\img\icheck\aero@2x.png" />
     <Content Include="Content\img\icheck\blue.png" />
