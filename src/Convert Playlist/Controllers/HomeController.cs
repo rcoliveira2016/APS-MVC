@@ -28,7 +28,6 @@ namespace Convert_Playlist.Controllers
         public async Task<ActionResult> Login()
         {
             var spotifyNegocio = new SpotifyNegocio();
-            spotifyNegocio = null;
             var logado = await spotifyNegocio.Login();
             if (logado) {
                 var view = await spotifyNegocio.pegarUsuario();
