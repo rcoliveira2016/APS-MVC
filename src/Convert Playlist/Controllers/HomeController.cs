@@ -35,13 +35,14 @@ namespace Convert_Playlist.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            return View("Acesso/Longin");
+            return RedirectToAction(nameof(Login));
         }
 
         public ActionResult Login(string[] erros = null)
         {
             if (spotifyNegocio.Logado)
-                return RedirectToAction(nameof(Login));
+
+                return RedirectToAction(nameof(Index));
 
             ViewBag.Erros = erros;
             return View("Acesso/Longin");
