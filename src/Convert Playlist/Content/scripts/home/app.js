@@ -73,7 +73,12 @@
     var _exportarEventoClick = function () {
         $("#btn-exportar").on('click', async function () {
 
-            iniciarBlockUI = false;
+            if (AjaxQueueExtension.status.filaExecutada()) {
+                _dialogoOk("A playlist já está sendo exportada");
+                return;
+            }      
+
+            iniciarBlockUI = false;                      
 
             PlaylistTrack.adicionarColunaExportado();
 
@@ -94,10 +99,7 @@
         });
     }
     
-    var _exportarPlaylist = function (idPlaylist) {
-
-        if (AjaxQueueExtension.status.filaExecutada())
-            return;
+    var _exportarPlaylist = function (idPlaylist) {        
 
         var playlist = parametros.playlistSelecionada;
 
@@ -170,6 +172,23 @@
                 playlist.Musicas = data;
                 PlaylistTrack.povoarTabela(data);
             }
+        });
+    }
+
+    var _dialogoOk = function (mensagem, eventoOk = null) {
+        BootstrapDialog.show({
+            type: BootstrapDialog.TYPE_DANGER,
+            title: 'Alerta',
+            message: mensagem,
+            buttons: [{
+                label: 'Ok',
+                action: function (dialog) {
+                    if (typeof eventoOk === 'function')
+                        eventoOk(dialog);
+
+                    dialog.close();
+                }
+            }]
         });
     }
 
