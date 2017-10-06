@@ -17,7 +17,12 @@ namespace Convert_Playlist.Helper
 
         private PrivateProfile privateProfile;
 
-        public bool logged { get { return privateProfile != null; } }
+        public bool logged { get {
+                var isNotNull = (privateProfile != null && spotifyWebApi != null);
+                var isLoggedApi = spotifyWebApi.UseAuth;
+                return isNotNull && isLoggedApi;
+            }
+        }
 
         public void Logout()
         {

@@ -22,8 +22,8 @@ namespace Convert_Playlist.Controllers
         public async Task<JsonResult<ICollection<SimplePlaylist>>> Get(string id)
         {
             var spotify = new SpotifyNegocio();
-            var t = await spotify.BuscarPlaylistUsuario(id);
-            return Json(t);
+            var playList = await spotify.BuscarPlaylistUsuario(id);
+            return Json(playList);
         }
 
         [HttpException]
@@ -31,7 +31,6 @@ namespace Convert_Playlist.Controllers
         public async Task<JsonResult<ICollection<PlaylistTrackItem>>> PlaylistTrack(PlaylistTrackParametro playlistTrackParametro)
         {
             var spotify = new SpotifyNegocio();
-            spotify = null;
             var playList = await spotify.BuscarPlaylistTrack(playlistTrackParametro);
 
             return Json(playList);

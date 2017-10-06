@@ -158,6 +158,7 @@
     <Content Include="Content\img\user.png" />
     <Content Include="Content\js\plugins\block-ui\block-ui.js" />
     <Content Include="Content\js\plugins\bootstrap\bootstrap-dialog.min.js" />
+    <Content Include="Content\scripts\extension\ajax-extension.js" />
     <Content Include="Content\scripts\home\app.js" />
     <Content Include="Content\scripts\spotify\playlist-track.js" />
     <Content Include="Content\scripts\spotify\playlists-item.js" />
