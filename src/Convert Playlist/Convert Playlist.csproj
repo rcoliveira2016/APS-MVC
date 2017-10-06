@@ -180,6 +180,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\SpotifyController.cs" />
     <Compile Include="Controllers\YoutubeController.cs" />
+    <Compile Include="Helper\Attribute\HttpExceptionAttribute.cs" />
     <Compile Include="Helper\SpotifyHelper.cs" />
     <Compile Include="Helper\YoutubeHelper.cs" />
     <Compile Include="Negocio\SpotifyNegocio.cs" />

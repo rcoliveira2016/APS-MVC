@@ -1,4 +1,5 @@
-﻿using Convert_Playlist.Negocio;
+﻿using Convert_Playlist.Helper.Attribute;
+using Convert_Playlist.Negocio;
 using Convert_Playlist.ViewModel.Parametros;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace Convert_Playlist.Controllers
     public class YoutubeController : ApiController
     {
 
+        [HttpException]
         [HttpPost]
         public async Task<string> CriarPlaylist(CriarPlaylistParametro criarPlaylistParametro)
         {
@@ -20,6 +22,7 @@ namespace Convert_Playlist.Controllers
             return await negocio.CriarPlaylist(criarPlaylistParametro);
         }
 
+        [HttpException]
         [HttpPost]
         public async Task<bool> CriarPlaylistItem(CriarPlaylistItemParametro criarPlaylistItemParametro)
         {

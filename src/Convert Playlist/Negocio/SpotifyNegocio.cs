@@ -43,14 +43,16 @@ namespace Convert_Playlist.Negocio
         public async Task<ICollection<PlaylistTrackItem>> BuscarPlaylistTrack(PlaylistTrackParametro playlistTrackParametro)
         {
             var playlistTrack = await Sessao.spotify.GetPlaylistFullTracksAll(playlistTrackParametro.Id, playlistTrackParametro.IdUsuario);
-            return playlistTrack.Select(x=> new PlaylistTrackItem {
+            return playlistTrack.Select(x => new PlaylistTrackItem
+            {
                 Id = x.Id,
                 Nome = x.Name,
-                Album = x.Album.Name, 
+                Album = x.Album.Name,
                 Artista = x.Artists
-                            .Select(y=> y.Name)
-                            .Aggregate((i,e) => $"{i}, {e}" )
+                            .Select(y => y.Name)
+                            .Aggregate((i, e) => $"{i}, {e}")
             }).ToList();
+           
         }
 
         public async Task<UsuarioSpotify> pegarUsuario()
