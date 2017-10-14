@@ -1,8 +1,8 @@
 ﻿"use strict";
 
-var AjaxQueueExtension = (function () {
+var AjaxExtension = (function () {
     var _ajaxBase = function (url, data, sucesso, erro, typeRequest) {
-        $.ajaxQueue({
+        $.ajax({
             type: typeRequest,
             url: url,
             data: data,
@@ -19,16 +19,24 @@ var AjaxQueueExtension = (function () {
                     console.log(data);
                 }
             },
-            aux: manobra
+            statusCode: {
+                500: function (data) {
+                    DialogoExtension.dialogoAlertDangerOk("Erro no servidor");
+                    console.log(data);
+                },
+                404: function () {
+                    DialogoExtension.dialogoAlertDangerOk("Ação não foi encontrada");
+                }
+            }
         });
     }
 
 
     return {
-        get: function (url, data, sucesso, erro) {
+        get: function (url, data, sucesso, erro = null) {
             _ajaxBase(url, data, sucesso, erro, "GET")
         },
-        post: function (url, data, sucesso, erro) {
+        post: function (url, data, sucesso, erro = null) {
             _ajaxBase(url, data, sucesso, erro, "POST")
         }
     }

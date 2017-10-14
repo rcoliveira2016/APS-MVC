@@ -31,18 +31,18 @@ namespace Convert_Playlist.Helper
 
         public async Task<bool> Login()
         {
-
-
             try
             {
                 WebAPIFactory webApiFactory = new WebAPIFactory(
-               "http://localhost",
-               8000,
-               "26d287105e31491889f3cd293d85bfea",
-               Scope.UserReadPrivate | Scope.UserReadEmail | Scope.PlaylistReadPrivate | Scope.UserLibraryRead |
-               Scope.UserFollowRead | Scope.UserReadBirthdate | Scope.UserTopRead | Scope.PlaylistReadCollaborative |
-               Scope.UserReadRecentlyPlayed | Scope.UserReadPlaybackState);
-                spotifyWebApi = await webApiFactory.GetWebApi();
+                   "http://localhost",
+                   8000,
+                   "26d287105e31491889f3cd293d85bfea",
+                   Scope.UserReadPrivate | Scope.UserReadEmail | Scope.PlaylistReadPrivate | Scope.UserLibraryRead |
+                   Scope.UserFollowRead | Scope.UserReadBirthdate | Scope.UserTopRead | Scope.PlaylistReadCollaborative |
+                   Scope.UserReadRecentlyPlayed | Scope.UserReadPlaybackState
+               );
+
+               spotifyWebApi = await webApiFactory.GetWebApi();
             }
             catch (Exception ex)
             {
@@ -62,6 +62,7 @@ namespace Convert_Playlist.Helper
         public async Task<List<FullTrack>> GetSavedTracks()
         {
             Paging<SavedTrack> savedTracks = await spotifyWebApi.GetSavedTracksAsync();
+            //ERROR DE TIME AOUT
             List<FullTrack> list = savedTracks.Items.Select(track => track.Track).ToList();
 
             while (savedTracks.Next != null)
@@ -75,7 +76,7 @@ namespace Convert_Playlist.Helper
 
         public async Task<List<SimplePlaylist>> GetPlaylists(string idUser)
         {            
-            Paging<SimplePlaylist> playlists = await spotifyWebApi.GetUserPlaylistsAsync(idUser);
+            Paging<SimplePlaylist> playlists = await GetSpotifyValidation(spotifyWebApi.GetUserPlaylistsAsync(idUser));
             List<SimplePlaylist> list = playlists.Items.ToList();
 
             while (playlists.Next != null)
@@ -118,7 +119,7 @@ namespace Convert_Playlist.Helper
 
         public async Task<List<FullTrack>> GetPlaylistFullTracksAll(string idPlaylist, string idUser)
         {
-            Paging<PlaylistTrack> playlists = await spotifyWebApi.GetPlaylistTracksAsync(idUser, idPlaylist, limit: 100);
+            Paging<PlaylistTrack> playlists = await GetSpotifyValidation(spotifyWebApi.GetPlaylistTracksAsync(idUser, idPlaylist, limit: 100));
             List<FullTrack> list = playlists.Items.Select(x => x.Track).ToList();
 
             while (playlists.Next != null)
@@ -142,6 +143,48 @@ namespace Convert_Playlist.Helper
             }
 
             return list;
+        }
+        public async Task<T> GetSpotifyValidation<T>(Func<Task<T>> action) where T : BasicModel
+        {
+            var spotifyModelReturn = await action.Invoke();
+
+            if (spotifyModelReturn.Error != null)
+            {
+                var statusErros = spotifyModelReturn.Error.Status;
+
+                switch (statusErros)
+                {
+                    case 401:
+                        Task.Run(() => Login()).Wait();
+                        return await action.Invoke();
+                }
+            }
+
+            return spotifyModelReturn;
+
+        }
+
+
+
+
+        public async Task<T> GetSpotifyValidation<T>(Task<T> spotifyModel) where T : BasicModel
+        {
+            var spotifyModelReturn = await spotifyModel;
+
+            if (spotifyModelReturn.Error != null)
+            {
+                var statusErros = spotifyModelReturn.Error.Status;
+
+                switch (statusErros)
+                {
+                    case 401:
+                        Task.Run(() => Login()).Wait();
+                        return await spotifyModel;
+                }
+            }
+
+            
+            return spotifyModel.Result;
         }
     }
 

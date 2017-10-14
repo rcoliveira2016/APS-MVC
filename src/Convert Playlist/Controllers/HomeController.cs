@@ -15,7 +15,7 @@ namespace Convert_Playlist.Controllers
             spotifyNegocio = new SpotifyNegocio();
         }
 
-        [MVCException]
+        //[MVCException]
         public async Task<ActionResult> Index()
         {
             if (!spotifyNegocio.Logado) {
@@ -25,7 +25,7 @@ namespace Convert_Playlist.Controllers
             return View(view);
         }
 
-        [MVCException]
+        //[MVCException]
         [HttpPost]
         public async Task<ActionResult> Login()
         {

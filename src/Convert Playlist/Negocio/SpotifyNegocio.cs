@@ -37,11 +37,13 @@ namespace Convert_Playlist.Negocio
         }
 
         public async Task<ICollection<SimplePlaylist>> BuscarPlaylistUsuario(string idUsuario){
+            Task.Run(() => Login()).Wait();
             return await Sessao.spotify.GetPlaylists(idUsuario);
         }
 
         public async Task<ICollection<PlaylistTrackItem>> BuscarPlaylistTrack(PlaylistTrackParametro playlistTrackParametro)
         {
+            Task.Run(() => Login()).Wait();
             var playlistTrack = await Sessao.spotify.GetPlaylistFullTracksAll(playlistTrackParametro.Id, playlistTrackParametro.IdUsuario);
             return playlistTrack.Select(x => new PlaylistTrackItem
             {
@@ -57,6 +59,7 @@ namespace Convert_Playlist.Negocio
 
         public async Task<UsuarioSpotify> pegarUsuario()
         {
+            Task.Run(() => Login()).Wait();
             var usuario = await Sessao.spotify.GetUserProflie();
 
             var listaDePlaylist = await Sessao.spotify.GetPlaylists(usuario.Id);
@@ -69,7 +72,6 @@ namespace Convert_Playlist.Negocio
                 Playlist = listaDePlaylist.Select(x => new PlaylistItem { IdUsuario = x.Owner.Id, Nome = x.Name, Id= x.Id}).ToList()
             };
         }
-
 
         public bool Logado { get {
                 return Sessao.spotify != null && Sessao.spotify.logged;

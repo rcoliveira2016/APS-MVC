@@ -44,6 +44,8 @@ namespace Convert_Playlist.App_Start
                 .Include("~/Content/js/plugins/block-ui/block-ui.js")
                 .Include("~/Content/scripts/home/app.js")
                 .Include("~/Content/scripts/extension/ajax-queue.js")
+                .Include("~/Content/scripts/extension/ajax-extension.js")
+                .Include("~/Content/scripts/extension/dialogo-extension.js")
                 .Include("~/Content/scripts/spotify/playlists-item.js")
                 .Include("~/Content/scripts/spotify/playlist-track.js")
                 .Include("~/Content/js/app.js")

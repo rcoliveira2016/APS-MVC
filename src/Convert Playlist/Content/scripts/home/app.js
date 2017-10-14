@@ -44,24 +44,24 @@
             e.preventDefault();
             var element = this;
             if (AjaxQueueExtension.status.filaExecutada()) {
-                BootstrapDialog.show({
-                    title: 'Alerta',
-                    message: 'Você deseja cancelar a exportação da playlist',
-                    buttons: [{
-                        label: 'Sim',
-                        action: function (dialog) {
-                            iniciarBlockUI = true;
-                            AjaxQueueExtension.limparQueue();
-                            _criarPlaylistTrack(element);
-                            dialog.close();
-                        }
-                    }, {
-                        label: 'Não',
-                        action: function (dialog) {
-                            dialog.close();
-                        }
-                    }]
-                });
+
+                var idUsuario = $(this).attr("data-usuario");
+                var idPlaylist = $(this).attr("data-playlist");
+                var playlist = _procurarPlaylist(idUsuario, idPlaylist);
+
+                DialogoExtension.dialogoSimOuNao(
+                    'Alerta',
+                    'Você deseja cancelar a exportação da playlist ' + playlist.Nome,
+                    function (dialog) {
+                        iniciarBlockUI = true;
+                        AjaxQueueExtension.limparQueue();
+                        _criarPlaylistTrack(element);
+                        dialog.close();
+                    },
+                   function (dialog) {
+                        dialog.close();
+                    }
+                )
             } else {
                 _criarPlaylistTrack(element);
             }
@@ -74,7 +74,7 @@
         $("#btn-exportar").on('click', async function () {
 
             if (AjaxQueueExtension.status.filaExecutada()) {
-                _dialogoOk("A playlist já está sendo exportada");
+                DialogoExtension.dialogoAlertDangerOk("A playlist já está sendo exportada");
                 return;
             }      
 
@@ -86,16 +86,13 @@
 
             AjaxQueueExtension.limparQueue();
 
-
-            $.ajax({
-                async: true,
-                url: parametros.urls.apiCriarPlaylist,
-                type: "Post",
-                data: { Nome: playlist.Nome },
-                success: function (data) {
+            AjaxExtension.post(
+                parametros.urls.apiCriarPlaylist,
+                { Nome: playlist.Nome },
+                function (data) {
                     _exportarPlaylist(data);
                 }
-            });
+            );
         });
     }
     
@@ -163,33 +160,14 @@
 
         $("#nome-playlist").text(nomePlaylist);
 
-        $.ajax({
-            async: true,
-            url: parametros.urls.apiPlaylistTrack,
-            type: "post",
-            data: { Id: idPlaylist, IdUsuario: idUsuario },
-            success: function (data) {
+        AjaxExtension.post(
+            parametros.urls.apiPlaylistTrack,
+            { Id: idPlaylist, IdUsuario: idUsuario },
+            function (data) {
                 playlist.Musicas = data;
                 PlaylistTrack.povoarTabela(data);
             }
-        });
-    }
-
-    var _dialogoOk = function (mensagem, eventoOk = null) {
-        BootstrapDialog.show({
-            type: BootstrapDialog.TYPE_DANGER,
-            title: 'Alerta',
-            message: mensagem,
-            buttons: [{
-                label: 'Ok',
-                action: function (dialog) {
-                    if (typeof eventoOk === 'function')
-                        eventoOk(dialog);
-
-                    dialog.close();
-                }
-            }]
-        });
+        );
     }
 
     _carregar();

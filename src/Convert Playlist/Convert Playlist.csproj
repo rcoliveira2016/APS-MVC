@@ -159,6 +159,7 @@
     <Content Include="Content\js\plugins\block-ui\block-ui.js" />
     <Content Include="Content\js\plugins\bootstrap\bootstrap-dialog.min.js" />
     <Content Include="Content\scripts\extension\ajax-extension.js" />
+    <Content Include="Content\scripts\extension\dialogo-extension.js" />
     <Content Include="Content\scripts\home\app.js" />
     <Content Include="Content\scripts\spotify\playlist-track.js" />
     <Content Include="Content\scripts\spotify\playlists-item.js" />
@@ -181,6 +182,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Common\Exception\TokenSpotifyException.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\SpotifyController.cs" />
     <Compile Include="Controllers\YoutubeController.cs" />

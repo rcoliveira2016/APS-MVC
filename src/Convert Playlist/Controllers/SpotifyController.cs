@@ -32,7 +32,6 @@ namespace Convert_Playlist.Controllers
         {
             var spotify = new SpotifyNegocio();
             var playList = await spotify.BuscarPlaylistTrack(playlistTrackParametro);
-
             return Json(playList);
         }
 
