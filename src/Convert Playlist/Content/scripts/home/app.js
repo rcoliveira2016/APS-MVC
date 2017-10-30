@@ -91,6 +91,9 @@
                 { Nome: playlist.Nome },
                 function (data) {
                     _exportarPlaylist(data);
+                },
+                function (data) {
+                    iniciarBlockUI = true;
                 }
             );
         });
