@@ -7,7 +7,21 @@
     var _setarStatusTd = function (index, exportado) {
         var table = $("#" + idElement);
         var tr = table.find("tbody tr")[index];
-        $(tr).find("td").first().text(exportado ? "Sim":"Não");
+
+        var icon = document.createElement("i");
+        icon.setAttribute("aria-hidden", "true");
+
+        if (exportado) {
+            icon.className = "fa fa-check";
+            icon.style.color = "#3c763d";
+        }
+        else {
+            icon.className = "fa fa-times";
+            icon.style.color = "#d22825";
+        }
+            
+
+        $(tr).find("td").first().html(icon);
     }
 
     var _removeStatusTd = function () {
@@ -34,7 +48,6 @@
         var thead = table.find("thead");        
 
         var th = document.createElement("th");
-        th.innerText = "Exportado";
         th.className = "exportado"
 
         thead.find("tr").prepend(th);
@@ -83,7 +96,7 @@
         div.className = "table-responsive";
 
         var table = document.createElement("table");
-        table.className = "table no-margin";
+        table.className = "table table-hover scroll no-margin";
 
         var thead = document.createElement("thead");
 
@@ -95,7 +108,7 @@
         thNome.innerHTML = "Nome";
 
         var thArtista = document.createElement("th");
-        thArtista.innerHTML = "Atista";
+        thArtista.innerHTML = "Artista";
 
         var thAlbum = document.createElement("th");
         thAlbum.innerHTML = "Álbum";

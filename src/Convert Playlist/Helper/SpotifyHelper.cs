@@ -77,6 +77,8 @@ namespace Convert_Playlist.Helper
         public async Task<List<SimplePlaylist>> GetPlaylists(string idUser)
         {            
             Paging<SimplePlaylist> playlists = await GetSpotifyValidation(spotifyWebApi.GetUserPlaylistsAsync(idUser));
+            if (playlists.Items == null )
+                return new List<SimplePlaylist>();
             List<SimplePlaylist> list = playlists.Items.ToList();
 
             while (playlists.Next != null)
@@ -120,7 +122,10 @@ namespace Convert_Playlist.Helper
         public async Task<List<FullTrack>> GetPlaylistFullTracksAll(string idPlaylist, string idUser)
         {
             Paging<PlaylistTrack> playlists = await GetSpotifyValidation(spotifyWebApi.GetPlaylistTracksAsync(idUser, idPlaylist, limit: 100));
-            List<FullTrack> list = playlists.Items.Select(x => x.Track).ToList();
+            if (playlists.Items == null )
+                return new List<FullTrack>();
+
+            List <FullTrack> list = playlists.Items.Select(x => x.Track).ToList();
 
             while (playlists.Next != null)
             {
@@ -144,6 +149,7 @@ namespace Convert_Playlist.Helper
 
             return list;
         }
+
         public async Task<T> GetSpotifyValidation<T>(Func<Task<T>> action) where T : BasicModel
         {
             var spotifyModelReturn = await action.Invoke();

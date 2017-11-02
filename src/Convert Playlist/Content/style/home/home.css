@@ -4,3 +4,39 @@
 #status{
     display:none;
 }
+
+.skin-blue .main-header .navbar {
+    background-color: #1db954;
+}
+
+.skin-blue .main-header .logo {
+    background-color: #1f9a4a;
+}
+
+.box.box-info {
+    border-top-color: #199043;
+}
+
+.skin-blue .main-header li.user-header {
+    background-color: #36ad65;
+}
+
+.skin-blue .main-header .logo:hover {
+    background-color: #1e753c;
+}
+
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+    background-color: #1e753c;
+}
+
+.skin-blue .sidebar-menu > li.header {
+    color: #657982;
+    background: #1a2226;
+}
+
+
+.td-exportado{
+    text-align:center;
+    width:40px;
+}
+
