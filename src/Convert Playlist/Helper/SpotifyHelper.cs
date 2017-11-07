@@ -105,6 +105,11 @@ namespace Convert_Playlist.Helper
             return list;
         }
 
+        internal async Task<FullPlaylist> GetPlaylist(string idPlaylist, string idUser)
+        {
+            return await spotifyWebApi.GetPlaylistAsync(idUser, idPlaylist);
+        }
+
         public async Task<List<PlaylistTrack>> GetPlaylistTracksAll(string idPlaylist, string idUser)
         {
             Paging<PlaylistTrack> playlists = await spotifyWebApi.GetPlaylistTracksAsync(idUser, idPlaylist, limit: 100);

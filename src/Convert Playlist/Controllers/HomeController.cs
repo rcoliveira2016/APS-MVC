@@ -21,7 +21,7 @@ namespace Convert_Playlist.Controllers
             if (!spotifyNegocio.Logado) {
                 return RedirectToAction(nameof(Login));
             }
-            var view = await spotifyNegocio.pegarUsuario();
+            var view = await spotifyNegocio.PegarUsuario();
             return View(view);
         }
 
@@ -31,7 +31,7 @@ namespace Convert_Playlist.Controllers
         {
             var logado = await spotifyNegocio.Login();
             if (logado) {
-                var view = await spotifyNegocio.pegarUsuario();
+                var view = await spotifyNegocio.PegarUsuario();
                 return RedirectToAction(nameof(Index));
             }
 

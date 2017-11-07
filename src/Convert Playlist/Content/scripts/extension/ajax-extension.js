@@ -21,8 +21,8 @@ var AjaxExtension = (function () {
             },
             statusCode: {
                 500: function (data) {
-                    DialogoExtension.dialogoAlertDangerOk("Erro no servidor");
-                    console.log(data);
+                    if (!erro)
+                        DialogoExtension.dialogoAlertDangerOk("Erro no servidor");
                 },
                 404: function () {
                     DialogoExtension.dialogoAlertDangerOk("Ação não foi encontrada");

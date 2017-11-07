@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Profile;
@@ -41,6 +42,27 @@ namespace Convert_Playlist.Negocio
             return await Sessao.spotify.GetPlaylists(idUsuario);
         }
 
+
+
+        public async Task<PlaylistItem> PesquisarPlaylist(PesquisarPlaylistParametros pesquisarPlaylistParametros)
+        {
+            var regex = new Regex("^(spotify:user:([a-zA-z0-9])+:playlist:([a-zA-z0-9])+)");
+
+            if (regex.IsMatch(pesquisarPlaylistParametros.Url))
+            {
+                var slipUrl = pesquisarPlaylistParametros.Url.Split(':');
+
+                var user = slipUrl[2];
+
+                var playlist = slipUrl[4];
+
+                return await PegarPlaylist(new PlaylistTrackParametro { Id = playlist, IdUsuario = user });
+
+            }
+
+            return null;
+        }
+
         public async Task<ICollection<PlaylistTrackItem>> BuscarPlaylistTrack(PlaylistTrackParametro playlistTrackParametro)
         {
             Task.Run(() => Login()).Wait();
@@ -57,7 +79,7 @@ namespace Convert_Playlist.Negocio
            
         }
 
-        public async Task<UsuarioSpotify> pegarUsuario()
+        public async Task<UsuarioSpotify> PegarUsuario()
         {
             Task.Run(() => Login()).Wait();
             var usuario = await Sessao.spotify.GetUserProflie();
@@ -73,8 +95,23 @@ namespace Convert_Playlist.Negocio
             };
         }
 
+        public async Task<PlaylistItem> PegarPlaylist(PlaylistTrackParametro playlistTrackParametro)
+        {
+            Task.Run(() => Login()).Wait();
+
+            var playlist = await Sessao.spotify.GetPlaylist(playlistTrackParametro.Id, playlistTrackParametro.IdUsuario);
+            
+
+            return new PlaylistItem
+            {
+                IdUsuario = playlist.Owner.Id,
+                Nome = playlist.Name,
+                Id = playlist.Id
+            };
+        }
+
         public bool Logado { get {
                 return Sessao.spotify != null && Sessao.spotify.logged;
-            } }
+        } }
     }
 }

@@ -35,6 +35,7 @@
             viewModel: @Html.Raw(Json.Encode(Model)),
             urls: {
                 apiPlaylistTrack:"@Url.HttpRouteUrl("ActionApi", new { controller= "Spotify", action = "PlaylistTrack" })",
+                apiPesquisarPlaylist:"@Url.HttpRouteUrl("ActionApi", new { controller= "Spotify", action = "PesquisarPlaylist" })",
                 apiCriarPlaylist: "@Url.HttpRouteUrl("ActionApi", new { controller= "Youtube", action = "CriarPlaylist" })",
                 apiCriarPlaylistItem: "@Url.HttpRouteUrl("ActionApi", new { controller= "Youtube", action = "CriarPlaylistItem" })",
             }

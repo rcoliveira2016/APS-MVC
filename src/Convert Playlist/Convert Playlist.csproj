@@ -199,6 +199,7 @@
     <Compile Include="Sessao.cs" />
     <Compile Include="ViewModel\Parametros\CriarPlaylistItemParametro.cs" />
     <Compile Include="ViewModel\Parametros\CriarPlaylistParametro.cs" />
+    <Compile Include="ViewModel\Parametros\PesquisarPlaylistParametros.cs" />
     <Compile Include="ViewModel\Parametros\PlaylistTrackParametro.cs" />
     <Compile Include="ViewModel\PlaylistTrackItem.cs" />
     <Compile Include="ViewModel\PlaylistItem.cs" />

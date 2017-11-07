@@ -35,5 +35,15 @@ namespace Convert_Playlist.Controllers
             return Json(playList);
         }
 
+
+        [HttpException]
+        [HttpPost]
+        public async Task<JsonResult<PlaylistItem>> PesquisarPlaylist(PesquisarPlaylistParametros pesquisarPlaylistParametros)
+        {
+            var spotify = new SpotifyNegocio();
+            var playList = await spotify.PesquisarPlaylist(pesquisarPlaylistParametros);
+            return Json(playList);
+        }
+        
     }
 }

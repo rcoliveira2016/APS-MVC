@@ -151,11 +151,52 @@
         var idUsuario = $(elemento).attr("data-usuario");
         var idPlaylist = $(elemento).attr("data-playlist");
 
-        $('#btn-exportar').show();
-
         var playlist = _procurarPlaylist(idUsuario, idPlaylist);
 
+        _criarPlaylistTrackTabela(playlist, idPlaylist, idUsuario);
+        
+    }
+
+    var _eventoPesquisaPlaylist = function () {
+        $("form.sidebar-form").submit(function (e) {
+            e.preventDefault();
+
+            var element = $(this).find("input");
+
+            if (AjaxQueueExtension.status.filaExecutada()) {
+
+                var playlist = parametros.playlistSelecionada
+
+                DialogoExtension.dialogoSimOuNao(
+                    'Alerta',
+                    'Você deseja cancelar a exportação da playlist ' + playlist.Nome,
+                    function (dialog) {
+                        iniciarBlockUI = true;
+                        AjaxQueueExtension.limparQueue();
+
+
+                        _pesquisarPlaylist(element);
+
+
+                        dialog.close();
+                    },
+                    function (dialog) {
+                        dialog.close();
+                    }
+                )
+
+            } else {
+                _pesquisarPlaylist(element);
+            }
+
+        });
+    }
+
+    var _criarPlaylistTrackTabela = function (playlist, idPlaylist, idUsuario) {
+
         var nomePlaylist = ('- ' + playlist.Nome);
+
+        $('#btn-exportar').show();
 
         parametros.playlistSelecionada = playlist;
 
@@ -173,8 +214,36 @@
         );
     }
 
+    var _pesquisarPlaylist = function (element) {
+        var url = $(element).val();
+        if (!url.match(/^(spotify:user:([a-zA-z0-9])+:playlist:([a-zA-z0-9])+)/)) {
+            DialogoExtension.dialogoAlertDangerOk("Playlist não existe", function () { });
+            return;
+        }
+
+        var slipUrl = url.split(':');
+
+        var user = slipUrl[2];
+
+        var playlist = slipUrl[4];
+
+
+        AjaxExtension.post(
+            parametros.urls.apiPesquisarPlaylist,
+            { Url: url },
+            function (data) {
+                _criarPlaylistTrackTabela(data, playlist, user);
+            },
+            function (data) {
+                DialogoExtension.dialogoAlertDangerOk("Playlist não existe", function () { });
+                iniciarBlockUI = true;
+            }
+        );
+    }
+
     _carregar();
     _eventoClickPlaylist();
     _exportarEventoClick();
     _carregarEventoLoadAjax();
+    _eventoPesquisaPlaylist();
 }
