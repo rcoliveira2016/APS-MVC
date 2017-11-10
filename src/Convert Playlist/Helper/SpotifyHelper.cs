@@ -4,6 +4,7 @@ using SpotifyAPI.Web.Enums;
 using SpotifyAPI.Web.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -33,10 +34,14 @@ namespace Convert_Playlist.Helper
         {
             try
             {
-                WebAPIFactory webApiFactory = new WebAPIFactory(
-                   "http://localhost",
-                   8000,
-                   "26d287105e31491889f3cd293d85bfea",
+                var url = ConfigurationManager.AppSettings[@"Url"];
+                var porta = Convert.ToInt32(ConfigurationManager.AppSettings[@"Porta"]);
+                var clienteId = ConfigurationManager.AppSettings[@"ClienteIdSpotify"];
+
+                var webApiFactory = new WebAPIFactory(
+                   url,
+                   porta,
+                   clienteId,
                    Scope.UserReadPrivate | Scope.UserReadEmail | Scope.PlaylistReadPrivate | Scope.UserLibraryRead |
                    Scope.UserFollowRead | Scope.UserReadBirthdate | Scope.UserTopRead | Scope.PlaylistReadCollaborative |
                    Scope.UserReadRecentlyPlayed | Scope.UserReadPlaybackState
